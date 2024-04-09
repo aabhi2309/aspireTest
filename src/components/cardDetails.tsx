@@ -9,7 +9,7 @@ const CardDetails = () => {
                 <i className='fi-group-11889 text-lg'></i>
                 <span className='text-sm font-semibold'>Card Details</span>
             </div>
-            <i className={`fi-${open ?'up-arrow':'down-arrow'} text-gray-500`} onClick={()=>setOpen(!open)} ></i>
+            <i className={`cursor-pointer fi-${open ?'up-arrow':'down-arrow'} text-gray-500`} onClick={()=>setOpen(!open)} ></i>
         </div>
         {open && <div className='w-[350px] p-5 bg-white rounded-b-lg flex flex-col'>
             <p>NO DATA TO SHOW</p>

@@ -15,7 +15,7 @@ const Accordain = ({data,name}:any) => {
         </div>
         {open && <><div className='w-[350px] p-5 bg-white rounded-b-lg flex flex-col'>
             {transactions && transactions.map((tnx:any,idx:number)=>(
-                <div>
+                <div key={idx}>
                     <div className='flex gap-2'>
                     <div className={`w-[48px] h-[48px] rounded-full flex justify-center items-center bg-${tnx.colCode1}`}>
                         <i className={`fi-${tnx.icon} text-[#009dff]`}></i>

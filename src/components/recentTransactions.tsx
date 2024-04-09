@@ -15,11 +15,11 @@ const RecentTransactions = () => {
                 <i className='fi-exchange text-lg'></i>
                 <span className='text-sm font-semibold'>Recent transactions</span>
             </div>
-            <i className={`fi-${open ?'up-arrow':'down-arrow'} text-gray-500`} onClick={()=>setOpen(!open)} ></i>
+            <i className={`cursor-pointer fi-${open ?'up-arrow':'down-arrow'} text-gray-500`} onClick={()=>setOpen(!open)} ></i>
         </div>
         {open && <><div className='w-[350px] p-5 bg-white rounded-b-lg flex flex-col'>
             {transactions.map((tnx,idx)=>(
-                <div>
+                <div key={idx}>
                     <div className='flex gap-2'>
                     <div className={`w-[48px] h-[48px] rounded-full flex justify-center items-center bg-${tnx.colCode1}`}>
                         <i className={`fi-${tnx.icon} text-[#009dff]`}></i>

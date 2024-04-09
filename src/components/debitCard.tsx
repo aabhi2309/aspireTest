@@ -3,22 +3,16 @@ import eyeImage from '../assests/images/red_eye.svg'
 
 const DebitCard = ({validThru,name,cardNumber}:any) => {
 
-    const cardNo =cardNumber ;
-    console.log({cardNumber});
+    const cardNo = cardNumber ;
     
     const [showCardNumber, setShowCardNumber] = useState(false);
-
-    // Function to toggle showing/hiding the card number
     const toggleCardNumberVisibility = () => {
       setShowCardNumber(!showCardNumber);
     };
-  
-    // Function to display the card number based on visibility state
     const displayCardNumber = () => {
       if (showCardNumber) {
         return cardNo;
       } else {
-        // Display last 4 digits as numbers, rest as dots
         const hiddenPart = cardNo.slice(0, -4).replace(/\d/g, '*');
         const visiblePart = cardNo.slice(-4);
         return hiddenPart.replace(/(.{4})/g, '$1 ') + visiblePart;
@@ -37,7 +31,7 @@ const DebitCard = ({validThru,name,cardNumber}:any) => {
                     <div className='text-xs'>{displayCardNumber()}</div>
                     <div className='flex gap-10 text-xs'>
                         <div>Thru: {validThru}</div>
-                        <div>CVV: ***</div>
+                        <div>CVV: <strong>***</strong></div>
                     </div>
                 </div>
                 
