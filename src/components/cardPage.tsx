@@ -1,28 +1,27 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import CardSlider from './cardSlider'
 import AddCard from './addCard'
 import CardFeature from './cardFeature'
 import RecentTransactions from './recentTransactions'
 import CardDetails from './cardDetails'
 import {DebitCardType} from '../types'
+import { getDebitCards } from '../services/apis'
 
 const CardPage = () => {
     const [activeTab, setactiveTab] = useState(0)
     const [openForm , setOpenForm] = useState(false)
     const cardTabs = ['My debit cards','All company cards']
-    const [debitCards,setDebitCards] = useState<DebitCardType[]>([{
-        cardNumber: '1234567891234567',
-        validThru:'12/20',
-        name:'Mark Henry'
-    },{
-        cardNumber: '1087654321987654',
-        validThru:'12/23',
-        name:'Jack Lee'
-    },{
-        cardNumber: '1003312122321098',
-        validThru:'1/25',
-        name:'Sam Bill'
-    }])
+    const [debitCards,setDebitCards] = useState([])
+    useEffect(()=>{
+        fetchDebitCards()
+    },[])
+
+    const fetchDebitCards = async () =>{
+        const data = await getDebitCards();
+        console.log({data});
+        setDebitCards(data)
+    }
+    
     return (
         <div className='p-12 w-full z-0'>
             <p>Available Balance</p>
