@@ -11,12 +11,9 @@ const AddCard = ({closeForm,addCard}:any) => {
     const [ formData, setFormData] =useState({name:'',cardNumber:'',validThru:generateExpiryDate(),freeze:false})
 
     const handleFormSubmit = (e:any) => {
-      e.preventDefault()
-      console.log({formData});
-      
+      e.preventDefault();
       addCard((prev: any)=>[...prev,formData])
-      closeForm(false)    
-
+      closeForm(false);  
     }
     const handleChange = (e:any) => {
         let { name, value} =e.target

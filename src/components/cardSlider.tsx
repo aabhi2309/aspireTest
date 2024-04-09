@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DebitCard from './debitCard';
 
 const CardSlider = ({cards}:any) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  
+  useEffect(()=>{
+    localStorage.setItem('currentIndex',JSON.stringify(0))
+  },[]) 
 
   const goToCard = (index: number) => {
-    console.log({index});
-    
     localStorage.setItem('currentIndex',JSON.stringify(index))
     setCurrentIndex(index);
   };

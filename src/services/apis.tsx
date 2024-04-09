@@ -9,7 +9,6 @@ export const getDebitCards = async () => {
           'Accept': 'application/json'
          }
       });
-    console.log({response})
     return response.data;
   } catch (error) {
     throw error;

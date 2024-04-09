@@ -17,7 +17,6 @@ const CardFeature = (props:any) => {
               if (i == currIdx) {
                   return { ...card, freeze: !card.freeze };
               }
-              console.log({card});              
               return card;
           });
       });

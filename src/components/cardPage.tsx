@@ -18,7 +18,6 @@ const CardPage = () => {
 
     const fetchDebitCards = async () =>{
         const data = await getDebitCards();
-        console.log({data});
         setDebitCards(data)
     }
     
