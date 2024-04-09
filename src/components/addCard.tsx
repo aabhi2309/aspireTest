@@ -1,18 +1,28 @@
-import React,{useState} from 'react'
+import React,{useState} from 'react';
+
+const generateExpiryDate = () => {
+  const currentDate = new Date();
+  const randomMonth = Math.floor(Math.random() * 12) + 1; // Random month between 1 and 12
+  const randomYear = Math.floor(Math.random() * 10) + currentDate.getFullYear(); // Random year within the next 10 years
+  return `${String(randomMonth).padStart(2, '0')}/${String(randomYear).slice(2)}`;
+};
 
 const AddCard = ({closeForm,addCard}:any) => {
-    const [ formData, setFormData] =useState({name:'',cardNumber:'',validThru:''})
+    const [ formData, setFormData] =useState({name:'',cardNumber:'',validThru:generateExpiryDate(),freeze:false})
 
     const handleFormSubmit = (e:any) => {
       e.preventDefault()
-      addCard((prev: any)=>[...prev,formData])
-      closeForm(false)
-
+      console.log({formData});
       
+      addCard((prev: any)=>[...prev,formData])
+      closeForm(false)    
 
     }
     const handleChange = (e:any) => {
-        const { name, value} =e.target
+        let { name, value} =e.target
+        if(name=='cardNumber'){
+          value = value.slice(0, 16);
+        }
         setFormData(prev=>({...prev,[name]:value}))
 
     }
@@ -20,6 +30,7 @@ const AddCard = ({closeForm,addCard}:any) => {
       e.preventDefault()
       closeForm(false)
     }
+    
 
   return (
     <div className='flex items-center justify-center fixed top-0 left-0 right-0 bottom-0 opacity-100 bg-black w-full h-full z-1 p-20'>
@@ -55,7 +66,7 @@ const AddCard = ({closeForm,addCard}:any) => {
             onChange={handleChange}
           />
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="validThru" className="block text-sm font-medium text-gray-700">
           Enter the Card Expiry
           </label>
@@ -65,7 +76,7 @@ const AddCard = ({closeForm,addCard}:any) => {
             value={formData.validThru}
             onChange={handleChange}
           />
-        </div>
+        </div> */}
         <div>
           <button
             type="submit"

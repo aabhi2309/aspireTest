@@ -42,7 +42,7 @@ const CardPage = () => {
             <div className='w-full border border-[#FCFCFC] drop-shadow p-10 flex gap-10 justify-between mt-5'>
                 <div className='flex flex-col gap-5'>
                     <CardSlider cards={debitCards}/>
-                    <CardFeature/>
+                    <CardFeature freezeCard={setDebitCards}/>
                 </div>
                 <div className='flex flex-col gap-5'>
                     <CardDetails/>

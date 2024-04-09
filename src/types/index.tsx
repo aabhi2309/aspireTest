@@ -1,5 +1,5 @@
 export interface SideTabsType {
-    icon:String,
+    icon:string,
     name:string
 } 
 
@@ -10,6 +10,6 @@ export interface DebitCardType {
 }
 
 export interface FeaturesType {
-    icon:String,
+    id:string,
     name:string
 }
