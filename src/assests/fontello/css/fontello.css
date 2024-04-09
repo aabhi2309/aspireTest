@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?7033393');
+  src: url('../font/fontello.eot?7033393#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?7033393') format('woff2'),
+       url('../font/fontello.woff?7033393') format('woff'),
+       url('../font/fontello.ttf?7033393') format('truetype'),
+       url('../font/fontello.svg?7033393#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?7033393#fontello') format('svg');
+  }
+}
+*/
+[class^="fi-"]:before, [class*=" fi-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.fi-business-and-finance:before { content: '\e800'; } /* '' */
+.fi-card:before { content: '\e804'; } /* '' */
+.fi-credit:before { content: '\e805'; } /* '' */
+.fi-deactivate-card:before { content: '\e806'; } /* '' */
+.fi-down-arrow:before { content: '\e807'; } /* '' */
+.fi-up-arrow:before { content: '\e809'; } /* '' */
+.fi-flights:before { content: '\e80a'; } /* '' */
+.fi-file-storage:before { content: '\e80b'; } /* '' */
+.fi-freeze-card:before { content: '\e80c'; } /* '' */
+.fi-gpay:before { content: '\e80d'; } /* '' */
+.fi-exchange:before { content: '\e80e'; } /* '' */
+.fi-group-11889:before { content: '\e80f'; } /* '' */
+.fi-home:before { content: '\e810'; } /* '' */
+.fi-next:before { content: '\e813'; } /* '' */
+.fi-megaphone:before { content: '\e815'; } /* '' */
+.fi-pay:before { content: '\e818'; } /* '' */
+.fi-pickup-car:before { content: '\e81a'; } /* '' */
+.fi-payments:before { content: '\e81c'; } /* '' */
+.fi-remove_red_eye:before { content: '\e81d'; } /* '' */
+.fi-replace-card:before { content: '\e81e'; } /* '' */
+.fi-set-spend-limit:before { content: '\e81f'; } /* '' */
+.fi-visa-logo:before { content: '\e822'; } /* '' */
+.fi-add:before { content: '\e823'; } /* '' */
+.fi-account:before { content: '\e824'; } /* '' */
+.fi-aspire-logo:before { content: '\e826'; } /* '' */
